@@ -16,6 +16,7 @@ GFMF 按照 GPL v3 协议发布，即你可以使用、修改和再发布。但�
 http://www.geophy.cn/CN/abstract/abstract15922.shtml
 
 > 王亮, 梁春涛. 2021. 以虚拟地震的理论格林函数为模板搜寻小地震. 地球物理学报,64(7): 2374-2393, doi: 10.6038/cjg2021O0361
+
 > WANG Liang, LIANG ChunTao. 2021. Detecting small earthquakes using the theoretical Green's function of virtual earthquakes as templates Chinese Journal of Geophysics(in Chinese), 64(7): 2374-2393, doi: 10.6038/cjg2021O0361
 
 # 已经支持了的研究
