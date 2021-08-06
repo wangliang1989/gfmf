@@ -1,0 +1,26 @@
+FC = nagfor -O2
+all: sacio.mod module_fastcor.mod module_weight.mod fastcor fastsum glibrms clean
+
+sacio.mod: sacio.f90
+	$(FC) -c $^
+
+module_fastcor.mod: module_fastcor.f90
+	$(FC) -c $^
+
+module_weight.mod: module_weight.f90
+	$(FC) -c $^
+
+%.o: %.f90
+	$(FC) -c $^
+
+fastcor: %: %.o sacio.o module_fastcor.o
+	$(FC) $^ -o $@
+
+fastsum: %: %.o sacio.o module_weight.o
+	$(FC) $^ -o $@
+
+glibrms: %: %.o sacio.o 
+	$(FC) $^ -o $@
+
+clean:
+	-rm *.o *.mod
