@@ -35,7 +35,7 @@ GFMF 按照 GPL v3 协议发布，即你可以使用、修改和再发布。但�
 ````bash
     export GFMF=your_real_path
     export PATH=$GFMF/bin:$PATH
-    # 不要忘记source
+    # 不要忘记 source
 ````
 
 # 文章下载与引用信息
@@ -47,8 +47,7 @@ http://www.geophy.cn/CN/abstract/abstract15922.shtml
 
 > WANG Liang, LIANG ChunTao. 2021. Detecting small earthquakes using the theoretical Green's function of virtual earthquakes as templates Chinese Journal of Geophysics(in Chinese), 64(7): 2374-2393, doi: 10.6038/cjg2021O0361
 
-# 已经支持了的研究
+# 已引用本方法的论文
 
-如果你使用了GFMF程序包，并参照上面的引用信息进行了引用。
-你可以把你的研究工作告诉我，我会视情况，以适当的，对大家都好的方式在此处列出。
-这样可以让别人知道你的研究工作，增加你的论文的引用量。
+如果你在论文中引用了我的上述论文。你可以把你的研究工作告诉我。我会视情况，以适当的，
+对大家都好的方式在此处列出。这样可以让别人知道你的研究工作，潜在地增加你的论文的引用量。
