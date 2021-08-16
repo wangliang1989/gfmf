@@ -1,5 +1,5 @@
 FC = ifort -O2
-all: sacio.mod module_fastcor.mod module_weight.mod fastcor fastsum glibrms fastgetscc sacdep clean
+all: sacio.mod module_fastcor.mod module_weight.mod fastcor fastsum glibrms clean
 
 sacio.mod: sacio.f90
 	$(FC) -c $^
@@ -17,12 +17,6 @@ fastcor: %: %.o sacio.o module_fastcor.o
 	$(FC) $^ -o $@
 
 fastsum: %: %.o sacio.o module_weight.o
-	$(FC) $^ -o $@
-
-fastgetscc: %: %.o sacio.o module_weight.o
-	$(FC) $^ -o $@
-
-sacdep: %: %.o sacio.o
 	$(FC) $^ -o $@
 
 glibrms: %: %.o sacio.o
