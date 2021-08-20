@@ -13,6 +13,8 @@ my ($config, $workdir, $ram) = @ARGV;
 die "no $config" unless (-e $config);
 die "no $workdir" unless (-d $workdir);
 die unless defined $ram and -d $ram;
+$ram = `realpath $ram`;
+chomp $ram;
 my %pars = read_config($config);
 my $threshold = $pars{THRESHOLD};
 $threshold = 8 unless (defined($threshold));
