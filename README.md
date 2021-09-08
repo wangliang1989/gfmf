@@ -27,9 +27,7 @@ master 分支则只包含我**自认为**无误的修改。
 [Parallel::ForkManager](https://metacpan.org/pod/Parallel::ForkManager)。
 
 ### 编译
-
 可以使用 Gfortran 、 Intel Fortran 或 NAG Fortran 任一进行编译。
-
 ````bash
 cd bin/
 # 以下命令执行其一即可，注意不应有任何报错
@@ -39,20 +37,20 @@ make -f Makefile_nag # 使用 NAG Fortran 编译
 ````
 
 ### 修改环境变量
-
 将以下内容加入环境变量：
-
 ````bash
-export GFMF=your_real_path
+export GFMF=你自己的真实路径
 export PATH=$GFMF/bin:$PATH
 # 不要忘记 source
 ````
 
 ## 下一步
+
 1. 使用[GFMF_tiny](https://github.com/wangliang1989/GFMF_tiny)验证安装。
 2. 其它进一步的学习待续
 
 ## 文章下载与引用信息
+
 下载论文及其 BibTex 和 Endnote 文件，请直接前往《地球物理学报》官网：
 http://www.geophy.cn/CN/abstract/abstract15922.shtml
 
