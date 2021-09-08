@@ -35,7 +35,7 @@ my @evdp = split m/\s+/, $pars{'DEPTH'};
 my @eqs = getgrids ("$pars{GRIDS}");
 my @station = getstations("$pars{STATION}", $workdir);
 my ($kztime, $kzdate) = check_stations ($workdir, @station);
-my ($MAX_PROCESSES) = getprocess ("Linux");
+my ($MAX_PROCESSES) = getprocess (8);
 
 # 复制数据
 system "rm -rf $ram/*";
@@ -246,9 +246,16 @@ sub check_stations {
 
 sub getprocess {
     my ($in) = @_;
+    my ($system) = split m/\s+/, `uname`;
     my $MAX_PROCESSES;
-    ($MAX_PROCESSES) = split m/\n/, `cat /proc/cpuinfo |grep "processor"|wc -l` if ($in eq "Linux");
-    $MAX_PROCESSES = 1 if ($MAX_PROCESSES < 1);
+    my $mac = 'sysctl -n hw.ncpu';
+    my $linux = 'cat /proc/cpuinfo | grep "processor"| wc -l';
+    if (defined $system) {
+        ($MAX_PROCESSES) = split m/\s+/, `$mac` if $system eq 'Darwin';
+        ($MAX_PROCESSES) = split m/\n/, `$linux` if $system eq 'Linux';
+    }
+    $MAX_PROCESSES = $in unless defined $MAX_PROCESSES;
+    $MAX_PROCESSES = $in if $MAX_PROCESSES > $in;
     return ($MAX_PROCESSES);
 }
 
