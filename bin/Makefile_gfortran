@@ -1,5 +1,6 @@
 FC = gfortran -O2 -Wall
-all: sacio.mod module_fastcor.mod module_weight.mod fastcor fastsum glibrms clean
+all: sacio.mod module_fastcor.mod module_weight.mod fastcor fastgetscc fastsum\
+    glibrms sacdep clean
 
 sacio.mod: sacio.f90
 	$(FC) -c $^
@@ -16,10 +17,16 @@ module_weight.mod: module_weight.f90
 fastcor: %: %.o sacio.o module_fastcor.o
 	$(FC) $^ -o $@
 
+fastgetscc: %: %.o sacio.o module_weight.o
+	$(FC) $^ -o $@
+
 fastsum: %: %.o sacio.o module_weight.o
 	$(FC) $^ -o $@
 
 glibrms: %: %.o sacio.o
+	$(FC) $^ -o $@
+
+sacdep: %: %.o sacio.o
 	$(FC) $^ -o $@
 
 clean:
