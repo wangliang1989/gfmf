@@ -1,4 +1,4 @@
-FC = gfortran -O2
+FC = gfortran -O2 -Wall
 all: sacio.mod module_fastcor.mod module_weight.mod fastcor fastsum glibrms clean
 
 sacio.mod: sacio.f90

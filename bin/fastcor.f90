@@ -6,7 +6,6 @@ character(len=1024) :: arg
 character(len=:) ,allocatable :: file, out
 integer :: i, flag, npts
 real,allocatable,dimension(:) :: x, y, norm, result
-real :: b, e
 type(sachead) :: headx, heady, head
 
 call get_command_argument(1, arg)

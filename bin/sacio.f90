@@ -149,7 +149,7 @@ end subroutine sacio_readhead
 !
 subroutine sacio_readsac(filename, head, data, flag)
 implicit none
-integer :: i
+integer :: i = 1
 character(len=:) ,allocatable :: filename
 real, allocatable, dimension(:), intent(inout) :: data
 type(sachead), intent(inout) :: head
@@ -201,7 +201,7 @@ end if
 close(unit=50)
 do while (i <= size(data))
     if ((data(i) /= data(i)) .OR. (data(i) == (data(i) - 1))) then
-            data(i) = 0
+        data(i) = 0
     end if
     i = i + 1
 end do

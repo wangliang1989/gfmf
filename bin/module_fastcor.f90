@@ -11,7 +11,7 @@ subroutine sub_fastcor(x, y, norm, result, flag)
     real, allocatable, dimension(:), intent(out) :: result
     real, allocatable, dimension(:) :: cor
     integer, intent(inout) :: flag
-    integer :: i, npts, nx, ny, j
+    integer :: i, npts, nx, ny
 
     flag = 0
     nx = size(x)
@@ -31,7 +31,7 @@ subroutine sub_norm(norm, x, ny, npts)
     real, allocatable, dimension(:), intent(in) :: x
     real, allocatable, dimension(:) :: temp
     integer, intent(in) :: ny, npts
-    integer :: i, j
+    integer :: i
 
     allocate(temp(1 : npts))
     temp = x * x
