@@ -19,7 +19,7 @@ fastcor: %: %.o sacio.o module_fastcor.o
 fastsum: %: %.o sacio.o module_weight.o
 	$(FC) $^ -o $@
 
-glibrms: %: %.o sacio.o 
+glibrms: %: %.o sacio.o
 	$(FC) $^ -o $@
 
 clean:
